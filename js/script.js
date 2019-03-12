@@ -28,7 +28,9 @@ function titleClickHandler(event){
   const clickedElementAtribute = clickedElement.getAttribute("href");
   console.log('Attribute of clicked link: ', clickedElementAtribute);
 
-  /* find the correct article using the selector (value of 'href' attribute) */
+  /* [DONE] find the correct article using the selector (value of 'href' attribute) */
+  const correctArticle = document.querySelector(clickedElementAtribute);
+  console.log('CorrectArticle:', correctArticle);
 
   /* add class 'active' to the correct article */
 }

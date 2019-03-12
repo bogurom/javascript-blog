@@ -52,6 +52,7 @@ function generateTitleLinks(){
   const titleList = document.querySelector(optTitleListSelector);
   console.log('titleList:', titleList);
   titleList.innerHTML = '';
+  let html = '';
 
   /* for each article */
   const articles = document.querySelectorAll(optArticleSelector);
@@ -71,8 +72,13 @@ function generateTitleLinks(){
 
     /* insert link into titleList */
     titleList.insertAdjacentHTML('afterbegin', linkHTML) && console.log('it works!');
+
+    /* insert link into html variable */
+    html = html + linkHTML;
+    console.log('html:', html);
   }
 
+  titleList.innerHTML = html;
 }
 
 generateTitleLinks();

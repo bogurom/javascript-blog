@@ -33,6 +33,7 @@ function titleClickHandler(event){
   console.log('CorrectArticle:', correctArticle);
 
   /* add class 'active' to the correct article */
+  correctArticle.classList.add('active');
 }
 
 const links = document.querySelectorAll('.titles a');

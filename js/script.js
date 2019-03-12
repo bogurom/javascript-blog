@@ -61,15 +61,16 @@ function generateTitleLinks(){
     const articleId = article.getAttribute('id');
     console.log('articleId:', articleId);
 
-    /* find the title element */
+    /* find the title element and get the title from the title element */
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
     console.log('articleTitle:', articleTitle);
 
-    /* get the title from the title element */
-
     /* create HTML of the link */
+    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    console.log('linkHTML:', linkHTML);
 
     /* insert link into titleList */
+    titleList.insertAdjacentHTML('afterbegin', linkHTML) && console.log('it works!');
   }
 
 }

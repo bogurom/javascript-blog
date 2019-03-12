@@ -14,7 +14,6 @@ function titleClickHandler(event){
 
   /* [DONE] add class 'active' to the clicked link */
   console.log('clickedElement:', clickedElement);
-  // console.log('clickedElement (with plus): ' + clickedElement);
   clickedElement.classList.add('active');
 
   /* [DONE] remove class 'active' from all articles */
@@ -32,7 +31,7 @@ function titleClickHandler(event){
   const correctArticle = document.querySelector(clickedElementAtribute);
   console.log('CorrectArticle:', correctArticle);
 
-  /* add class 'active' to the correct article */
+  /* [DONE] add class 'active' to the correct article */
   correctArticle.classList.add('active');
 }
 

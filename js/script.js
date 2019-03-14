@@ -121,11 +121,11 @@ function generateTags(){
       html = html + linkHTML;
       console.log('html:', html);
 
-
     /* END LOOP: for each tag */
     }
 
     /* insert HTML of all the links into the tags wrapper */
+    wrapper.insertAdjacentHTML('afterbegin', html);
 
   /* END LOOP: for every article: */
   }

@@ -92,10 +92,14 @@ function generateTags(){
   console.log('articles:', articles);
 
   /* START LOOP: for every article: */
+  for(let article of articles) {
 
     /* find tags wrapper */
+    const wrapper = article.querySelector(optArticleTagsSelector);
+    console.log('wrapper:', wrapper);
 
     /* make html variable with empty string */
+
 
     /* get tags from data-tags attribute */
 
@@ -112,6 +116,7 @@ function generateTags(){
     /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
+  }
 }
 
 generateTags();

@@ -99,9 +99,11 @@ function generateTags(){
     console.log('wrapper:', wrapper);
 
     /* make html variable with empty string */
-
+    let html = '';
 
     /* get tags from data-tags attribute */
+    const articleTags = article.getAttribute('data-tags');
+    console.log('articleTags:', articleTags);
 
     /* split tags into array */
 

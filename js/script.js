@@ -361,7 +361,7 @@ function generateAuthors(){
 
     /* generate HTML of the link of each author */
     // const authorLinkHTML = '<a href="#author-' + author + '" class="' + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + ' </a>';
-    const authorLinkHTML = '<a href="#author-' + author + '">' + '<span class="author-name">' +  author + '</span></a>';
+    const authorLinkHTML = '<li><a href="#author-' + author + '">' + '<span class="author-name">' +  author + ' (' + allAuthors[author] + ')</span></a></li>';
     console.log('authorLinkHTML:', authorLinkHTML);
 
     /* [NEW] add link to to allAuthorsHTML */

@@ -116,8 +116,22 @@ return params;
 }
 
 function calculateTagClass(count, params){
-
+  // how far is this tag from  the minimal count (the least used tag)
+  const normalizedCount = count - params.min;
+  //how far is maximal count (the most used tag) from the minimal count (the least used tag)
+  const normalizedMax = params.max - params.min;
+  // what is the diffrence in percentage
+  const percentage = normalizedCount / normalizedMax;
+  // count classNumber based on the percentage and available number of classes
+  // (optCloudClassCount - 1) because in this case percentage can be 100% (1)
+  const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
+  console.log('classNumber:', classNumber);
+  const tagClassPrefix = optCloudClassPrefix + classNumber;
+  return tagClassPrefix;
+  console.log('tagClassPrefix:', tagClassPrefix);
 }
+// I can't find 'tagClassPrefix' in console.
+
 
 
 function generateTags(){
@@ -191,7 +205,7 @@ function generateTags(){
   for(let tag in allTags){
     /* generate HTML of the link of each tag with class*/
     // const tagLinkHTML = '<li>' + calculateTagClass(allTags[tag], tagsParam) + '</li>';
-    const tagLinkHTML = '<a href="#tag-' + tag + '" class="' + calculateTagClass(allTags[tag], tagsParam) + '">' + tag + ' (' + allTags[tag] + ')</a>';
+    const tagLinkHTML = '<a href="#tag-' + tag + '" class="' + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + ' </a>';
     console.log('tagLinkHTML:', tagLinkHTML);
     /* [NEW] add link to to allTagsHTML */
     // allTagsHTML += '<a href="#tag-' + tag + '" class="">' + tag + ' (' + allTags[tag] + ') ';
